@@ -12,10 +12,10 @@ compatibility_date = "2024-08-07"
 # binding = "MY_BUCKET"
 # bucket_name = "my-bucket"
 
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "my-database"
-# database_id = ""
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "cfw-plantilla"
+database_id = "b6cae986-a3e9-4e09-a05b-bbd282091f4b"
 
 # [ai]
 # binding = "AI"

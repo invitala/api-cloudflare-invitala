@@ -5,6 +5,9 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
+    "@libsql/client": "^0.8.1",
+    "drizzle-kit": "^0.23.2",
+    "drizzle-orm": "^0.32.2",
     "hono": "^4.5.4"
   },
   "devDependencies": {

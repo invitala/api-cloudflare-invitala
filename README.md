@@ -10,6 +10,11 @@ Correr en local
 npm run dev
 ```
 
+Desplegar en un CFW:
+```
+npm run deploy
+```
+
 ------------------------------------------------------------------------------------------------------
 Pasos para crear un nuevo proyecto.
 

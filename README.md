@@ -1,11 +1,15 @@
+# Comandos para correr el proyecto:
+
+Instalar dependencias:
 ```
-npm install
+npm i
+```
+
+Correr en local
+```
 npm run dev
 ```
 
-```
-npm run deploy
-```
 ------------------------------------------------------------------------------------------------------
 Pasos para crear un nuevo proyecto.
 

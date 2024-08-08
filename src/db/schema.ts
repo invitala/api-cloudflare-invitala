@@ -1,15 +1,15 @@
-import { mysqlTable, serial, text, boolean } from 'drizzle-orm/mysql-core';
+import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
 
-export const assistant = mysqlTable('assistant', {
-  id: serial('id').primaryKey(),
+export const assistant = sqliteTable('assistant', {
+  id: integer('id').primaryKey(),
   full_name: text('full_name').notNull(),
   comment: text('comment'),
-  is_ceremony: boolean('is_ceremony').notNull(),
-  is_celebration: boolean('is_celebration').notNull()
+  is_ceremony: integer('is_ceremony', {mode: 'boolean'}).notNull(),
+  is_celebration: integer('is_celebration', {mode: 'boolean'}).notNull()
 });
 
-export const song = mysqlTable('song', {
-  id: serial('id').primaryKey(),
+export const song = sqliteTable('song', {
+  id: integer('id').primaryKey(),
   guest_name: text('guest_name').notNull(),
   song_name: text('song_name').notNull(),
   url: text('url')

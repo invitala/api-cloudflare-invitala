@@ -19,7 +19,12 @@ npm run deploy
 
 Crear una DB en D1
 ```
-npx wrangler d1 create cfw-plantilla
+npx wrangler d1 create cfw-plantilla-db
+```
+
+Para crear migraciones usamos el comando:
+```
+npm run db:generate
 ```
 Una vez creada la DB se copia el resultado de lo que arroja la consola en el archivo wrangler.toml
 
@@ -27,13 +32,13 @@ Una vez tengamos las migraciones listas, proecedemos a enviarlas a la DB, aqui p
 
 comando local
 ```
-npx wrangler d1 execute cfw-plantilla --local --file=./drizzle/migrations/0000_whole_junta.sql
+npx wrangler d1 execute cfw-plantilla-db --local --file=./drizzle/migrations/0000_cynical_oracle.sql
 ```
 una vez creada localmente la DB, podemos copiar su ruta de almacenamiento en la carpea wrangler/state/v3/d1 para agregarlo a nuestro cliente de MySQL en Visua Studio.
 
 Comando para produccion:
 ```
-npx wrangler d1 execute cfw-plantilla --remote --file=./drizzle/migrations/0000_whole_junta.sql
+npx wrangler d1 execute cfw-plantilla-db --remote --file=./drizzle/migrations/0000_whole_junta.sql
 ```
 
 Referencia de los comandos: https://www.youtube.com/watch?v=PxWleEgi3Hw&t=202s

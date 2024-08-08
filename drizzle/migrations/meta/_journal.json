@@ -1,12 +1,12 @@
 {
   "version": "7",
-  "dialect": "mysql",
+  "dialect": "sqlite",
   "entries": [
     {
       "idx": 0,
-      "version": "5",
-      "when": 1723127360319,
-      "tag": "0000_whole_junta",
+      "version": "6",
+      "when": 1723141946737,
+      "tag": "0000_cynical_oracle",
       "breakpoints": true
     }
   ]

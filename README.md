@@ -23,6 +23,19 @@ npx wrangler d1 create cfw-plantilla
 ```
 Una vez creada la DB se copia el resultado de lo que arroja la consola en el archivo wrangler.toml
 
+Una vez tengamos las migraciones listas, proecedemos a enviarlas a la DB, aqui podemos hacerlo primero al entorno local y luego al D1:
+
+comando local
+```
+npx wrangler d1 execute cfw-plantilla --local --file=./drizzle/migrations/0000_whole_junta.sql
+```
+una vez creada localmente la DB, podemos copiar su ruta de almacenamiento en la carpea wrangler/state/v3/d1 para agregarlo a nuestro cliente de MySQL en Visua Studio.
+
+Comando para produccion:
+```
+npx wrangler d1 execute cfw-plantilla --remote --file=./drizzle/migrations/0000_whole_junta.sql
+```
+
 ------------------------------------------------------------------------------------------------------
 ## Nuevo proyecto
 

@@ -36,6 +36,8 @@ Comando para produccion:
 npx wrangler d1 execute cfw-plantilla --remote --file=./drizzle/migrations/0000_whole_junta.sql
 ```
 
+Referencia de los comandos: https://www.youtube.com/watch?v=PxWleEgi3Hw&t=202s
+Cambiar todos por nom y npx.
 ------------------------------------------------------------------------------------------------------
 ## Nuevo proyecto
 

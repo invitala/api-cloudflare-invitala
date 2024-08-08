@@ -15,7 +15,17 @@ Desplegar en un CFW:
 npm run deploy
 ```
 
+## Configuracion DB
+
+Crear una DB en D1
+```
+npx wrangler d1 create cfw-plantilla
+```
+Una vez creada la DB se copia el resultado de lo que arroja la consola en el archivo wrangler.toml
+
 ------------------------------------------------------------------------------------------------------
+## Nuevo proyecto
+
 Pasos para crear un nuevo proyecto.
 
 Primero se debe crear un nuevo proyecto con las instrucciones de: https://hono.dev/docs/getting-started/cloudflare-workers 

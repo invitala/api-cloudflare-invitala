@@ -2,6 +2,8 @@
   "name": "api-cloudflare-invitala",
   "scripts": {
     "dev": "wrangler dev src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:up": "drizzle-kit up",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {

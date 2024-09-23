@@ -34,7 +34,7 @@ comando local
 ```
 npx wrangler d1 execute cfw-plantilla-db --local --file=./drizzle/migrations/0000_cynical_oracle.sql
 ```
-una vez creada localmente la DB, podemos copiar su ruta de almacenamiento en la carpea wrangler/state/v3/d1 para agregarlo a nuestro cliente de MySQL en Visua Studio.
+una vez creada localmente la DB, podemos copiar su ruta de almacenamiento en la carpea wrangler/state/v3/d1 para agregarlo a nuestro cliente de MySQL en Visual Studio.
 
 Comando para produccion:
 ```
@@ -42,7 +42,7 @@ npx wrangler d1 execute cfw-plantilla-db --remote --file=./drizzle/migrations/00
 ```
 
 Referencia de los comandos: https://www.youtube.com/watch?v=PxWleEgi3Hw&t=202s
-Cambiar todos por nom y npx.
+Cambiar todos por npm y npx.
 ------------------------------------------------------------------------------------------------------
 ## Nuevo proyecto
 

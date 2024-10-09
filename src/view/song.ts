@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/d1';
-import { song } from './db/schema';
+import { song } from '../db/schema';
 import { Hono } from 'hono'
-import { zSong } from './middleware/validator';
+import { zSong } from '../middleware/validator';
 
 
 export type Env = {

@@ -1,6 +1,7 @@
 import { drizzle } from 'drizzle-orm/d1';
-import { assistant } from './db/schema';
+import { assistant } from '../db/schema';
 import { Hono } from 'hono'
+import { zAssistant } from '../middleware/validator';
 
 
 export type Env = {
@@ -23,7 +24,7 @@ api_assitant
         );
       }
     })
-    .post('/assistant/', async (c) => {
+    .post('/assistant/', zAssistant, async (c) => {
       const body = await c.req.json()
       const new_assistant = {
         full_name: body.full_name as string,
@@ -31,7 +32,6 @@ api_assitant
         is_ceremony: body.is_ceremony as string,
         is_celebration: body.is_celebration as string
       } 
-
       try {
         const db = drizzle(c.env.DB);
         await db.insert(assistant).values(new_assistant)
@@ -45,4 +45,4 @@ api_assitant
       }
     })
 
-    export default api_assitant
+export { api_assitant }

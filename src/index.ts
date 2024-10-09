@@ -2,11 +2,24 @@ import { api_assitant } from './assistant';
 //import api_email from './email'
 import { api_song } from './song';
 import { Hono } from 'hono'
-  
+import { bearerAuth } from 'hono/bearer-auth';
+
+
+type Bindings = {
+    TOKEN_API: string
+}
+
 
 // declarar la app principal
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
+
+// middleware de token
+app.use('/api/*', (c, next) =>{
+    const tokenMiddleware = bearerAuth({ token: c.env.TOKEN_API })
+    console.log(c.env.TOKEN_API)
+    return tokenMiddleware(c, next)
+})
 
 // rutas de mi app principal
 app.route('/api', api_assitant);

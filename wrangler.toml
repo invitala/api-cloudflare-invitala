@@ -19,3 +19,7 @@ database_id = "fc5957d0-511b-42c7-8d96-47ce7e3ed85b"
 
 # [ai]
 # binding = "AI"
+
+# wrangler.toml (wrangler v3.78.6^)
+[observability]
+enabled = true

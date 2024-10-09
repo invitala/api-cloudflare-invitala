@@ -9,6 +9,7 @@
   "dependencies": {
     "@hono/zod-validator": "^0.4.1",
     "@libsql/client": "^0.8.1",
+    "dotenv": "^16.4.5",
     "drizzle-kit": "^0.23.2",
     "drizzle-orm": "^0.32.2",
     "hono": "^4.5.4",

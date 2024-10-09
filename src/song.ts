@@ -1,6 +1,8 @@
 import { drizzle } from 'drizzle-orm/d1';
 import { song } from './db/schema';
 import { Hono } from 'hono'
+import { zSong } from './validator';
+
 
 export type Env = {
   DB: D1Database;
@@ -20,7 +22,7 @@ api_song
             );
         }
         })
-    .post('/song/', async (c) => {
+    .post('/song/', zSong, async (c) => {
         const body = await c.req.json()
 
         const new_song = {
@@ -43,4 +45,4 @@ api_song
     })
     
 
-export default api_song
+export { api_song }

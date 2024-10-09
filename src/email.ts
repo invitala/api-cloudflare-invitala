@@ -1,36 +1,27 @@
-import { Hono } from 'hono';
+import { Resend } from "resend";
+import { Hono } from 'hono'
 
 
 export type Env = {
   DB: D1Database;
 }
 
-const api_email = new Hono<{ Bindings: Env }>()
+const api_email = new Hono<{ Bindings: Env }>
 
 
-async function sendEmail(to, subject, text) {
-    const MAILGUN_API_KEY = 'tu-api-key';
-    const MAILGUN_DOMAIN = 'invita.la';
-  
-    const response = await fetch(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${btoa(`api:${MAILGUN_API_KEY}`)}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: new URLSearchParams({
-        from: 'tu-email@tu-dominio.com',
-        to,
-        subject,
-        text
-      })
+export default {
+  // Method to send email to pass request, env and ctx  
+  async fetch(request, env, ctx) {
+    const resend = new Resend("your_resend_api_key");
+
+    const { data, error } = await resend.emails.send({
+      from: "hello@invita.la",
+      to: "victorlara@logicsystems.com.mx",
+      subject: "Hello World",
+      html: "<p>Hello from Workers</p>",
     });
-    return response;
-  }
 
-api_email
-    .post('/email/', async (c) =>{
+    return Response.json({ data, error });
+  },
+};
 
-    })
-
-export default api_email

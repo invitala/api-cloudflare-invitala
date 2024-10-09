@@ -1,12 +1,17 @@
-import api_assitant from './assistant';
-import api_email from './email'
-import api_song from './song';
+import { api_assitant } from './assistant';
+//import api_email from './email'
+import { api_song } from './song';
 import { Hono } from 'hono'
   
-// Routes of API
+
+// declarar la app principal
 const app = new Hono();
+
+
+// rutas de mi app principal
 app.route('/api', api_assitant);
 app.route('/api', api_song);
-app.route('/email', api_email);
+//app.route('/email', api_email);
 
 export default app
+    

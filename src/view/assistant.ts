@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/d1';
-import { assistant } from './db/schema';
+import { assistant } from '../db/schema';
 import { Hono } from 'hono'
-import { zAssistant } from './middleware/validator';
+import { zAssistant } from '../middleware/validator';
 
 
 export type Env = {

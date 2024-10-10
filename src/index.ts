@@ -9,10 +9,8 @@ type Bindings = {
     TOKEN_API: string
 }
 
-
 // declarar la app principal
 const app = new Hono<{ Bindings: Bindings }>();
-
 
 // middleware de token
 app.use('/api/*', (c, next) =>{

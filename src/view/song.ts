@@ -4,7 +4,7 @@ import { Hono } from 'hono'
 import { zSong } from '../middleware/validator';
 
 
-export type Env = {
+type Env = {
   DB: D1Database;
 }
 

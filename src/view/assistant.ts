@@ -4,7 +4,7 @@ import { Hono } from 'hono'
 import { zAssistant } from '../middleware/validator';
 
 
-export type Env = {
+type Env = {
   DB: D1Database;
 }
 

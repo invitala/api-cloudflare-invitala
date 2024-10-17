@@ -9,7 +9,7 @@ type Bindings = {
 }
 
 // declarar la app principal
-const app = new Hono<{ Bindings: Bindings }>();
+const app = new Hono<{ Bindings: Bindings }>().basePath('/api')
 
 // middleware de token
 app.use('/api/*', (c, next) =>{
@@ -19,8 +19,8 @@ app.use('/api/*', (c, next) =>{
 })
 
 // rutas de mi app principal
-app.route('/api', api_assitant);
-app.route('/api', api_song);
+app.route('/', api_assitant);
+app.route('/', api_song);
 //app.route('/email', api_email);
 
 export default app

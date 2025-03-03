@@ -1,0 +1,1 @@
+ALTER TABLE `assistant` ADD `num_guests` integer;

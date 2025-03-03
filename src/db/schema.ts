@@ -11,7 +11,8 @@ export const assistant = sqliteTable('assistant', {
   full_name: text('full_name').notNull(),
   comment: text('comment'),
   is_ceremony: integer('is_ceremony', {mode: 'boolean'}).notNull(),
-  is_celebration: integer('is_celebration', {mode: 'boolean'}).notNull()
+  is_celebration: integer('is_celebration', {mode: 'boolean'}).notNull(),
+  num_guests: integer('num_guests').default(0)
 });
 
 export const song = sqliteTable('song', {

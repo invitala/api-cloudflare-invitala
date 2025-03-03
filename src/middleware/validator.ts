@@ -6,7 +6,8 @@ const zValidatorAssistant = z.object({
     full_name: z.string().min(1),
     comment: z.string().min(1),
     is_ceremony: z.boolean(),
-    is_celebration: z.boolean()
+    is_celebration: z.boolean(),
+    num_guests: z.number()
 });
 
 // Validador de datos de canciones

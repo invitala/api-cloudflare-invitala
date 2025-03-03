@@ -1,5 +1,6 @@
 import { api_assitant } from './view/assistant';
 import { api_song } from './view/song';
+import { api_email } from './emails/emails';
 import { Hono } from 'hono'
 import { bearerAuth } from 'hono/bearer-auth';
 
@@ -21,7 +22,7 @@ app.use('/api/*', (c, next) =>{
 // rutas de mi app principal
 app.route('/', api_assitant);
 app.route('/', api_song);
-//app.route('/email', api_email);
+app.route('/', api_email);
 
 export default app
     

@@ -10,8 +10,6 @@ type Env = {
 
 const api_assitant = new Hono<{ Bindings: Env }>()
 
-
-
 api_assitant
 .get('/assistant/', async (c) => {
     try { 
@@ -30,7 +28,8 @@ api_assitant
         full_name: body.full_name as string,
         comment: body.comment as string,
         is_ceremony: body.is_ceremony as string,
-        is_celebration: body.is_celebration as string
+        is_celebration: body.is_celebration as string,
+        num_guests: body.num_guests as string
       } 
       try {
         const db = drizzle(c.env.DB);
@@ -38,7 +37,6 @@ api_assitant
   
         return new Response('Created', { status: 201 })
       } catch (error) {
-        console.log(error)
         return c.json(
           {error}, 400
         );

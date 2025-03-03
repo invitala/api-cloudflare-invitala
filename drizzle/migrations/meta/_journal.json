@@ -8,6 +8,41 @@
       "when": 1723141946737,
       "tag": "0000_cynical_oracle",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1740781719171,
+      "tag": "0001_unique_ikaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1740781922789,
+      "tag": "0002_blue_violations",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1740782164441,
+      "tag": "0003_hesitant_thing",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1740783515807,
+      "tag": "0004_abnormal_tombstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1741032185659,
+      "tag": "0005_cultured_vengeance",
+      "breakpoints": true
     }
   ]
 }

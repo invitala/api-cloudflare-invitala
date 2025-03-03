@@ -37,7 +37,6 @@ api_song
 
         return new Response('Created', { status: 201 })
         } catch (error) {
-        console.log(error)
         return c.json(
             {error}, 400
         );

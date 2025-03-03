@@ -19,10 +19,6 @@ api_email
             const db = drizzle(c.env.DB);
             const assistantList = await db.select().from(assistant);
             const songsList = await db.select().from(song);
-            
-            // Log the retrieved data
-            console.log('Assistant List:', assistantList);
-            console.log('Songs List:', songsList);
 
             const data = await resend.emails.send({
                 from: 'Invita.La <dev@invita.la>',

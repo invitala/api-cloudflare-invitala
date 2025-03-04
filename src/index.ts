@@ -15,7 +15,6 @@ const app = new Hono<{ Bindings: Bindings }>().basePath('/api')
 // middleware de token
 app.use('/api/*', (c, next) =>{
     const tokenMiddleware = bearerAuth({ token: c.env.TOKEN_API })
-    console.log(c.env.TOKEN_API)
     return tokenMiddleware(c, next)
 })
 

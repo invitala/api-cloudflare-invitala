@@ -2,18 +2,17 @@ import { Hono } from "hono"
 import { Resend } from "resend"
 import { drizzle } from "drizzle-orm/d1"
 import { assistant, song } from "../db/schema"
-import { weekly_info_template, 
-    welcome_template } from "./email_templates"
+import { weekly_info_template, welcome_template } from "./email_templates"
 
 type Env = {
     DB: D1Database;
 }
 
 const api_email = new Hono<{ Bindings: Env }>()
-const resend = new Resend('re_fa1zXoin_6NCjmsitaZP5MWwXmS4J7qj8')
 
 api_email
     .get('/send_email_resum/', async (c) =>{
+        const resend = new Resend(c.env.TOKEN_RESEND);
         try{
             // get all assistants and songs from db
             const db = drizzle(c.env.DB);
@@ -36,6 +35,7 @@ api_email
     })
     .get('/send_email_welcome/', async (c) =>{
         try{
+            const resend = new Resend(c.env.TOKEN_RESEND);
             // testing data
             const userName = 'Arturo y Maria';
             const systemUrl = 'https://invita.la';

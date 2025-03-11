@@ -8,9 +8,9 @@ compatibility_date = "2024-08-07"
 # binding = "MY_KV_NAMESPACE"
 # id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-# [[r2_buckets]]
-# binding = "MY_BUCKET"
-# bucket_name = "my-bucket"
+ [[r2_buckets]]
+ binding = "R2_BUCKET"
+ bucket_name = "cfw-plantilla-bucket"
 
 [[d1_databases]]
 binding = "DB" 

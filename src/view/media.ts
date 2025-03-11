@@ -24,7 +24,7 @@ api_media.post('/upload_media/', async (c) => {
           // Validar tipo de archivo
           const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
           if (!allowedMimeTypes.includes(file.type)) {
-            uploadResults.push({ fileName: file.name, status: 'rejected', message: 'Tipo invalido de archivo' });
+            uploadResults.push({ fileName: file.name, status: 'rejected', message: 'Tipo de archivo invalido' });
             continue; // Saltar este archivo
           }
   
@@ -48,34 +48,17 @@ api_media.post('/upload_media/', async (c) => {
             },
           });
   
-          uploadResults.push({ fileName: uniqueFileName, status: 'success', message: 'File uploaded successfully' });
+          uploadResults.push({ fileName: uniqueFileName, status: 'success', message: 'Archivo subido correctamente' });
         } catch (error) {
-          uploadResults.push({ fileName: file.name, status: 'error', message: 'Failed to upload file', error: error.message });
+          uploadResults.push({ fileName: file.name, status: 'error', message: 'Fallo al subir el archivo', error: error.message });
         }
       }
   
-      return c.json({ message: 'File upload process completed', results: uploadResults });
+      return c.json({ message: 'Proceso de subida completo', results: uploadResults });
     } catch (error) {
-      console.error('Error processing upload request:', error);
-      return c.json({ message: 'Failed to process upload request', error: error.message }, 500);
+      return c.json({ message: 'Error subiendo los archivos', error: error.message }, 500);
     }
 });
-
-api_media.get('/list_media/', async (c) => {
-  try {
-    const files = await c.env.R2_BUCKET.list();
-    const fileList = files.objects.map(file => ({
-      key: file.key,
-      size: file.size,
-      lastModified: file.uploaded
-    }));
-
-    return c.json({ files: fileList });
-  } catch (error) {
-    return c.json({ message: 'Failed to list files', error }, 500);
-  }
-});
-
 
 export { api_media };
 
